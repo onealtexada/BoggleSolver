@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="boggleSolverApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Boggle Solver</title>
+<script type="text/javascript" src="lib/angular.js"></script>
+<script type="text/javascript" src="boggleSolver.js"></script>
+</head>
+<body>
+<div ng-controller="boggleSolverCtrl">
+Welcome to {{message}}
+<form ng-submit="sendPost()">
+<h4>Enter Boggle Board Data</h4>
+<table>
+  <tr>
+    <td><input ng-model="a1" type="text" maxlength="1"/></td>
+	<td><input ng-model="a2" type="text" maxlength="1"/></td>
+	<td><input ng-model="a3" type="text" maxlength="1"/></td>
+	<td><input ng-model="a4" type="text" maxlength="1"/></td>
+  </tr>
+  <tr>
+    <td><input ng-model="b1" type="text" maxlength="1"/></td>
+	<td><input ng-model="b2" type="text" maxlength="1"/></td>
+	<td><input ng-model="b3" type="text" maxlength="1"/></td>
+	<td><input ng-model="b4" type="text" maxlength="1"/></td>
+  </tr>
+  <tr>
+    <td><input ng-model="c1" type="text" maxlength="1"/></td>
+	<td><input ng-model="c2" type="text" maxlength="1"/></td>
+	<td><input ng-model="c3" type="text" maxlength="1"/></td>
+	<td><input ng-model="c4" type="text" maxlength="1"/></td>
+  </tr>
+  <tr>
+    <td><input ng-model="d1" type="text" maxlength="1"/></td>
+	<td><input ng-model="d2" type="text" maxlength="1"/></td>
+	<td><input ng-model="d3" type="text" maxlength="1"/></td>
+	<td><input ng-model="d4" type="text" maxlength="1"/></td>
+  </tr>
+</table>
+<br/>
+<button type="submit">Submit Board</button>
+</form>
+<table ng-hide="listWords == null">
+  <tr>
+    <th>Words - (Total Words: {{totalWords}} - Total Points {{totalPoints}})</th>
+  </tr>
+  <tr ng-repeat="word in listWords">
+    <td>{{word}}</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
